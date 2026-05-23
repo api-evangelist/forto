@@ -1,0 +1,115 @@
+aid: forto
+url: https://raw.githubusercontent.com/api-evangelist/forto/refs/heads/main/apis.yml
+name: Forto
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+- Freight
+- Logistics
+- Supply Chain
+- Shipping
+- Freight Forwarding
+- EDI
+description: Forto is a digital freight forwarder and supply chain platform that combines technology with logistics expertise
+  to provide sea, air, and rail freight services across 100+ countries. The platform offers a public REST API for booking
+  management, shipment tracking, transport plans, document handling, and webhook subscriptions, enabling shippers, enterprises,
+  and partners to integrate Forto freight operations directly into their ERP, TMS, and supply chain systems via standard
+  HTTPS APIs, EDI, or fully customized integrations.
+created: '2026-05-23'
+modified: '2026-05-23'
+specificationVersion: '0.19'
+apis:
+- aid: forto:forto-public-api
+  name: Forto Public API
+  tags:
+  - Bookings
+  - Shipments
+  - Tracking
+  - Transport Plans
+  - Documents
+  - Webhooks
+  humanURL: https://developers.forto.com/reference
+  baseURL: https://api.forto.com
+  properties:
+  - url: https://developers.forto.com/
+    type: Documentation
+  - url: https://developers.forto.com/reference
+    type: APIReference
+  - url: https://developers.forto.com/llms.txt
+    type: LLMsTxt
+  - url: https://developers.forto.com/recipes/creation-of-booking-request
+    type: GettingStarted
+  - url: https://developers.forto.com/recipes/code-sample-listening-for-changes-with-webhook-subscription
+    type: Tutorial
+    title: Webhook Subscription Tutorial
+  description: The Forto Public API provides programmatic access to Forto's digital freight forwarding platform. It exposes
+    booking management (create, update, finalize, discard, list), shipment operations (list, get, documents, invoices, reports),
+    multi-version transport plans with milestone events, subscription-based webhooks for change notifications, and OAuth-style
+    token management. Integrations can be implemented out-of-the-box via the REST API, through predefined EDI flows, or as
+    fully customized integrations into SAP, Infor Nexus, Oracle, and other enterprise systems.
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/forto-logistics
+- type: Website
+  url: https://forto.com/en/
+- type: Portal
+  url: https://developers.forto.com/
+- type: Documentation
+  url: https://developers.forto.com/reference
+- type: GettingStarted
+  url: https://developers.forto.com/recipes/creation-of-booking-request
+- type: Tutorials
+  url: https://developers.forto.com/recipes
+- type: LLMsTxt
+  url: https://developers.forto.com/llms.txt
+- type: Blog
+  url: https://forto.com/en/blog/
+- type: Support
+  url: https://forto.com/en/contact-us/
+- type: Careers
+  url: https://forto.com/en/career/
+- type: PrivacyPolicy
+  url: https://forto.com/en/data-protection/
+- type: TermsOfService
+  url: https://forto.com/en/terms-and-conditions/
+- type: Features
+  data:
+  - name: REST API
+    description: Public HTTPS REST API exposing booking, shipment, transport plan, document, and subscription endpoints
+  - name: EDI Integrations
+    description: Predefined EDI-based integrations for core data exchange with shipper systems
+  - name: Webhook Subscriptions
+    description: Create, list, and delete subscriptions to receive notifications on shipment and booking changes
+  - name: Transport Plan Tracking
+    description: Multi-version transport plan API with 30+ milestone events at shipment and container level
+  - name: Document Management
+    description: Upload and download shipment documents, invoices, and reports via API
+  - name: Token-based Authentication
+    description: Create, list, and delete API tokens for authenticating requests
+  - name: FortoLabs Agentic AI
+    description: AI solutions for the logistics industry providing agentic AI capabilities for logistics operations
+- type: UseCases
+  data:
+  - name: ERP / TMS Integration
+    description: Connect Forto shipments and bookings directly into SAP, Oracle, Infor Nexus, and other enterprise systems
+  - name: Real-Time Shipment Visibility
+    description: Surface live transport milestones into supply chain dashboards and control towers
+  - name: Booking Automation
+    description: Programmatically create, update, and finalize freight booking requests across sea, air, and rail
+  - name: Event-Driven Workflows
+    description: Subscribe to webhooks to trigger downstream workflows when shipment status changes
+  - name: Sustainability Reporting
+    description: Pull emissions and Climate Visibility data into ESG and sustainability reporting
+- type: Integrations
+  data:
+  - name: SAP
+    description: Integrate Forto shipment data into SAP ERP and supply chain modules
+  - name: Oracle
+    description: Connect Forto bookings and tracking events into Oracle ERP and SCM applications
+  - name: Infor Nexus
+    description: Exchange shipment and booking data with the Infor Nexus supply chain network
+  - name: EDI
+    description: Predefined EDI integrations for standardized B2B freight data exchange
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
