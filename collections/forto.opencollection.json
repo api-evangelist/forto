@@ -1,0 +1,464 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forto Public API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Bookings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List booking requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/bookings",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List booking requests"
+        },
+        {
+          "info": {
+            "name": "Create booking request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.forto.com/bookings"
+          },
+          "docs": "Create booking request"
+        },
+        {
+          "info": {
+            "name": "Retrieve booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/bookings/:bookingId",
+            "params": [
+              {
+                "name": "bookingId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve booking"
+        },
+        {
+          "info": {
+            "name": "Update booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.forto.com/bookings/:bookingId",
+            "params": [
+              {
+                "name": "bookingId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update booking"
+        },
+        {
+          "info": {
+            "name": "Finalize booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.forto.com/bookings/:bookingId/finalize",
+            "params": [
+              {
+                "name": "bookingId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Finalize booking"
+        },
+        {
+          "info": {
+            "name": "Discard booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.forto.com/bookings/:bookingId/discard",
+            "params": [
+              {
+                "name": "bookingId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Discard booking"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Shipments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List shipments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/shipments",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List shipments"
+        },
+        {
+          "info": {
+            "name": "Retrieve shipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/shipments/:shipmentId",
+            "params": [
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve shipment"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List shipment documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/shipments/:shipmentId/documents",
+            "params": [
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List shipment documents"
+        },
+        {
+          "info": {
+            "name": "Upload shipment document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.forto.com/shipments/:shipmentId/documents",
+            "params": [
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "type",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload shipment document"
+        },
+        {
+          "info": {
+            "name": "List shipment invoices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/shipments/:shipmentId/invoices",
+            "params": [
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List shipment invoices"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "TransportPlans",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve transport plan for shipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/shipments/:shipmentId/transport-plan",
+            "params": [
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve transport plan for shipment"
+        },
+        {
+          "info": {
+            "name": "List transport plan events for shipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/shipments/:shipmentId/transport-plan/events",
+            "params": [
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List transport plan events for shipment"
+        },
+        {
+          "info": {
+            "name": "Retrieve transport plan for container",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/containers/:containerId/transport-plan",
+            "params": [
+              {
+                "name": "containerId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve transport plan for container"
+        },
+        {
+          "info": {
+            "name": "List transport plan events for container",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/containers/:containerId/transport-plan/events",
+            "params": [
+              {
+                "name": "containerId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List transport plan events for container"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List subscriptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/subscriptions"
+          },
+          "docs": "List subscriptions"
+        },
+        {
+          "info": {
+            "name": "Create subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.forto.com/subscriptions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create subscription"
+        },
+        {
+          "info": {
+            "name": "Delete subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.forto.com/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete subscription"
+        },
+        {
+          "info": {
+            "name": "List inbox events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/inbox/events",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List inbox events"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Tokens",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List API tokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/tokens"
+          },
+          "docs": "List API tokens"
+        },
+        {
+          "info": {
+            "name": "Create API token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.forto.com/tokens"
+          },
+          "docs": "Create API token"
+        },
+        {
+          "info": {
+            "name": "Delete API token",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.forto.com/tokens/:tokenId",
+            "params": [
+              {
+                "name": "tokenId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete API token"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
