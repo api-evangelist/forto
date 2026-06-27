@@ -36,7 +36,7 @@ apis:
   - url: https://developers.forto.com/reference
     type: APIReference
   - url: https://developers.forto.com/llms.txt
-    type: LLMsTxt
+    type: LlmsText
   - url: https://developers.forto.com/recipes/creation-of-booking-request
     type: GettingStarted
   - url: https://developers.forto.com/recipes/code-sample-listening-for-changes-with-webhook-subscription
@@ -60,7 +60,7 @@ common:
   url: https://developers.forto.com/recipes/creation-of-booking-request
 - type: Tutorials
   url: https://developers.forto.com/recipes
-- type: LLMsTxt
+- type: LlmsText
   url: https://developers.forto.com/llms.txt
 - type: Blog
   url: https://forto.com/en/blog/
