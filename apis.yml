@@ -48,6 +48,8 @@ apis:
     token management. Integrations can be implemented out-of-the-box via the REST API, through predefined EDI flows, or as
     fully customized integrations into SAP, Infor Nexus, Oracle, and other enterprise systems.
 common:
+- type: AgenticAccess
+  url: agentic-access/forto-agentic-access.yml
 - type: VulnerabilityDisclosure
   url: security/forto-vulnerability-disclosure.yml
 - type: DomainSecurity
