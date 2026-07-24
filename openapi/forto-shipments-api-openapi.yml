@@ -1,0 +1,82 @@
+openapi: 3.1.0
+info:
+  title: Forto Public Bookings Shipments API
+  description: 'Forto is a digital freight forwarder. The Public API exposes booking
+
+    management, shipment operations, transport plans with milestone events,
+
+    document handling, and subscription-based webhooks, plus token management
+
+    for authentication.
+
+
+    Endpoint categories are derived from the public API reference index at
+
+    https://developers.forto.com/llms.txt.
+
+    '
+  version: '1'
+  contact:
+    name: Forto Developers
+    url: https://developers.forto.com/
+servers:
+- url: https://api.forto.com
+  description: Production
+security:
+- bearerToken: []
+tags:
+- name: Shipments
+paths:
+  /shipments:
+    get:
+      summary: List shipments
+      operationId: listShipments
+      tags:
+      - Shipments
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - name: status
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Shipments.
+  /shipments/{shipmentId}:
+    parameters:
+    - $ref: '#/components/parameters/shipmentId'
+    get:
+      summary: Retrieve shipment
+      operationId: getShipment
+      tags:
+      - Shipments
+      responses:
+        '200':
+          description: Shipment.
+components:
+  parameters:
+    shipmentId:
+      name: shipmentId
+      in: path
+      required: true
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+    offset:
+      name: offset
+      in: query
+      schema:
+        type: integer
+        minimum: 0
+  securitySchemes:
+    bearerToken:
+      type: http
+      scheme: bearer
+      description: Bearer token issued via the /tokens endpoint.

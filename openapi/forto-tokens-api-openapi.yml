@@ -1,0 +1,67 @@
+openapi: 3.1.0
+info:
+  title: Forto Public Bookings Tokens API
+  description: 'Forto is a digital freight forwarder. The Public API exposes booking
+
+    management, shipment operations, transport plans with milestone events,
+
+    document handling, and subscription-based webhooks, plus token management
+
+    for authentication.
+
+
+    Endpoint categories are derived from the public API reference index at
+
+    https://developers.forto.com/llms.txt.
+
+    '
+  version: '1'
+  contact:
+    name: Forto Developers
+    url: https://developers.forto.com/
+servers:
+- url: https://api.forto.com
+  description: Production
+security:
+- bearerToken: []
+tags:
+- name: Tokens
+paths:
+  /tokens:
+    get:
+      summary: List API tokens
+      operationId: listTokens
+      tags:
+      - Tokens
+      responses:
+        '200':
+          description: Tokens.
+    post:
+      summary: Create API token
+      operationId: createToken
+      tags:
+      - Tokens
+      responses:
+        '201':
+          description: Token created.
+  /tokens/{tokenId}:
+    parameters:
+    - name: tokenId
+      in: path
+      required: true
+      schema:
+        type: string
+    delete:
+      summary: Delete API token
+      operationId: deleteToken
+      tags:
+      - Tokens
+      responses:
+        '204':
+          description: Token deleted.
+components:
+  securitySchemes:
+    bearerToken:
+      type: http
+      scheme: bearer
+      description: Bearer token issued via the /tokens endpoint.

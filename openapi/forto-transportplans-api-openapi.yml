@@ -1,0 +1,94 @@
+openapi: 3.1.0
+info:
+  title: Forto Public Bookings TransportPlans API
+  description: 'Forto is a digital freight forwarder. The Public API exposes booking
+
+    management, shipment operations, transport plans with milestone events,
+
+    document handling, and subscription-based webhooks, plus token management
+
+    for authentication.
+
+
+    Endpoint categories are derived from the public API reference index at
+
+    https://developers.forto.com/llms.txt.
+
+    '
+  version: '1'
+  contact:
+    name: Forto Developers
+    url: https://developers.forto.com/
+servers:
+- url: https://api.forto.com
+  description: Production
+security:
+- bearerToken: []
+tags:
+- name: TransportPlans
+paths:
+  /shipments/{shipmentId}/transport-plan:
+    parameters:
+    - $ref: '#/components/parameters/shipmentId'
+    get:
+      summary: Retrieve transport plan for shipment
+      operationId: getShipmentTransportPlan
+      tags:
+      - TransportPlans
+      responses:
+        '200':
+          description: Transport plan.
+  /shipments/{shipmentId}/transport-plan/events:
+    parameters:
+    - $ref: '#/components/parameters/shipmentId'
+    get:
+      summary: List transport plan events for shipment
+      operationId: listShipmentTransportPlanEvents
+      tags:
+      - TransportPlans
+      responses:
+        '200':
+          description: Events.
+  /containers/{containerId}/transport-plan:
+    parameters:
+    - name: containerId
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Retrieve transport plan for container
+      operationId: getContainerTransportPlan
+      tags:
+      - TransportPlans
+      responses:
+        '200':
+          description: Transport plan.
+  /containers/{containerId}/transport-plan/events:
+    parameters:
+    - name: containerId
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: List transport plan events for container
+      operationId: listContainerTransportPlanEvents
+      tags:
+      - TransportPlans
+      responses:
+        '200':
+          description: Events.
+components:
+  parameters:
+    shipmentId:
+      name: shipmentId
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    bearerToken:
+      type: http
+      scheme: bearer
+      description: Bearer token issued via the /tokens endpoint.
