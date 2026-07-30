@@ -2,7 +2,20 @@ aid: forto
 url: https://raw.githubusercontent.com/api-evangelist/forto/refs/heads/main/apis.yml
 name: Forto
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/forto.png
 tags:
 - Freight
 - Logistics
@@ -39,14 +52,77 @@ apis:
     type: LlmsText
   - url: https://developers.forto.com/recipes/creation-of-booking-request
     type: GettingStarted
-  - url: https://developers.forto.com/recipes/code-sample-listening-for-changes-with-webhook-subscription
+  - url: >-
+      https://developers.forto.com/recipes/code-sample-listening-for-changes-with-webhook-subscription
     type: Tutorial
     title: Webhook Subscription Tutorial
-  description: The Forto Public API provides programmatic access to Forto's digital freight forwarding platform. It exposes
-    booking management (create, update, finalize, discard, list), shipment operations (list, get, documents, invoices, reports),
-    multi-version transport plans with milestone events, subscription-based webhooks for change notifications, and OAuth-style
-    token management. Integrations can be implemented out-of-the-box via the REST API, through predefined EDI flows, or as
-    fully customized integrations into SAP, Infor Nexus, Oracle, and other enterprise systems.
+  description: >-
+    The Forto Public API provides programmatic access to Forto's digital freight forwarding platform.
+    It exposes booking management (create, update, finalize, discard, list), shipment operations (list,
+    get, documents, invoices, reports), multi-version transport plans with milestone events, subscription-based
+    webhooks for change notifications, and OAuth-style token management. Integrations can be implemented
+    out-of-the-box via the REST API, through predefined EDI flows, or as fully customized integrations
+    into SAP, Infor Nexus, Oracle, and other enterprise systems.
+- aid: forto:forto-bookings-api
+  name: Forto Bookings API
+  description: The Bookings API from Forto — 4 operation(s) for bookings.
+  humanURL: https://developers.forto.com/reference
+  baseURL: https://api.forto.com
+  tags:
+  - Bookings
+  properties:
+  - type: OpenAPI
+    url: openapi/forto-bookings-api-openapi.yml
+- aid: forto:forto-documents-api
+  name: Forto Documents API
+  description: The Documents API from Forto — 2 operation(s) for documents.
+  humanURL: https://developers.forto.com/reference
+  baseURL: https://api.forto.com
+  tags:
+  - Documents
+  properties:
+  - type: OpenAPI
+    url: openapi/forto-documents-api-openapi.yml
+- aid: forto:forto-shipments-api
+  name: Forto Shipments API
+  description: The Shipments API from Forto — 2 operation(s) for shipments.
+  humanURL: https://developers.forto.com/reference
+  baseURL: https://api.forto.com
+  tags:
+  - Shipments
+  properties:
+  - type: OpenAPI
+    url: openapi/forto-shipments-api-openapi.yml
+- aid: forto:forto-subscriptions-api
+  name: Forto Subscriptions API
+  description: The Subscriptions API from Forto — 3 operation(s) for subscriptions.
+  humanURL: https://developers.forto.com/reference
+  baseURL: https://api.forto.com
+  tags:
+  - Subscriptions
+  properties:
+  - type: OpenAPI
+    url: openapi/forto-subscriptions-api-openapi.yml
+- aid: forto:forto-tokens-api
+  name: Forto Tokens API
+  description: The Tokens API from Forto — 2 operation(s) for tokens.
+  humanURL: https://developers.forto.com/reference
+  baseURL: https://api.forto.com
+  tags:
+  - Tokens
+  properties:
+  - type: OpenAPI
+    url: openapi/forto-tokens-api-openapi.yml
+- aid: forto:forto-transportplans-api
+  name: Forto TransportPlans API
+  description: The TransportPlans API from Forto — 4 operation(s) for transportplans.
+  humanURL: https://developers.forto.com/reference
+  baseURL: https://api.forto.com
+  tags:
+  - TransportPlans
+  properties:
+  - type: OpenAPI
+    url: openapi/forto-transportplans-api-openapi.yml
 common:
 - type: AgenticAccess
   url: agentic-access/forto-agentic-access.yml
