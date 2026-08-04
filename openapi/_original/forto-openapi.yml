@@ -1,0 +1,265 @@
+openapi: 3.1.0
+info:
+  title: Forto Public API
+  description: |
+    Forto is a digital freight forwarder. The Public API exposes booking
+    management, shipment operations, transport plans with milestone events,
+    document handling, and subscription-based webhooks, plus token management
+    for authentication.
+
+    Endpoint categories are derived from the public API reference index at
+    https://developers.forto.com/llms.txt.
+  version: "1"
+  contact:
+    name: Forto Developers
+    url: https://developers.forto.com/
+servers:
+  - url: https://api.forto.com
+    description: Production
+security:
+  - bearerToken: []
+paths:
+  /bookings:
+    get:
+      summary: List booking requests
+      operationId: listBookings
+      tags: [Bookings]
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+      responses:
+        "200": { description: Paginated list of bookings. }
+    post:
+      summary: Create booking request
+      operationId: createBooking
+      tags: [Bookings]
+      responses:
+        "201": { description: Booking request created. }
+  /bookings/{bookingId}:
+    parameters:
+      - $ref: '#/components/parameters/bookingId'
+    get:
+      summary: Retrieve booking
+      operationId: getBooking
+      tags: [Bookings]
+      responses:
+        "200": { description: Booking. }
+    patch:
+      summary: Update booking
+      operationId: updateBooking
+      tags: [Bookings]
+      responses:
+        "200": { description: Booking updated. }
+  /bookings/{bookingId}/finalize:
+    parameters:
+      - $ref: '#/components/parameters/bookingId'
+    post:
+      summary: Finalize booking
+      operationId: finalizeBooking
+      tags: [Bookings]
+      responses:
+        "200": { description: Booking finalized. }
+  /bookings/{bookingId}/discard:
+    parameters:
+      - $ref: '#/components/parameters/bookingId'
+    post:
+      summary: Discard booking
+      operationId: discardBooking
+      tags: [Bookings]
+      responses:
+        "200": { description: Booking discarded. }
+  /shipments:
+    get:
+      summary: List shipments
+      operationId: listShipments
+      tags: [Shipments]
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - name: status
+          in: query
+          schema: { type: string }
+      responses:
+        "200": { description: Shipments. }
+  /shipments/{shipmentId}:
+    parameters:
+      - $ref: '#/components/parameters/shipmentId'
+    get:
+      summary: Retrieve shipment
+      operationId: getShipment
+      tags: [Shipments]
+      responses:
+        "200": { description: Shipment. }
+  /shipments/{shipmentId}/documents:
+    parameters:
+      - $ref: '#/components/parameters/shipmentId'
+    get:
+      summary: List shipment documents
+      operationId: listShipmentDocuments
+      tags: [Documents]
+      responses:
+        "200": { description: Documents. }
+    post:
+      summary: Upload shipment document
+      operationId: uploadShipmentDocument
+      tags: [Documents]
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                type:
+                  type: string
+      responses:
+        "201": { description: Document uploaded. }
+  /shipments/{shipmentId}/invoices:
+    parameters:
+      - $ref: '#/components/parameters/shipmentId'
+    get:
+      summary: List shipment invoices
+      operationId: listShipmentInvoices
+      tags: [Documents]
+      responses:
+        "200": { description: Invoices. }
+  /shipments/{shipmentId}/transport-plan:
+    parameters:
+      - $ref: '#/components/parameters/shipmentId'
+    get:
+      summary: Retrieve transport plan for shipment
+      operationId: getShipmentTransportPlan
+      tags: [TransportPlans]
+      responses:
+        "200": { description: Transport plan. }
+  /shipments/{shipmentId}/transport-plan/events:
+    parameters:
+      - $ref: '#/components/parameters/shipmentId'
+    get:
+      summary: List transport plan events for shipment
+      operationId: listShipmentTransportPlanEvents
+      tags: [TransportPlans]
+      responses:
+        "200": { description: Events. }
+  /containers/{containerId}/transport-plan:
+    parameters:
+      - name: containerId
+        in: path
+        required: true
+        schema: { type: string }
+    get:
+      summary: Retrieve transport plan for container
+      operationId: getContainerTransportPlan
+      tags: [TransportPlans]
+      responses:
+        "200": { description: Transport plan. }
+  /containers/{containerId}/transport-plan/events:
+    parameters:
+      - name: containerId
+        in: path
+        required: true
+        schema: { type: string }
+    get:
+      summary: List transport plan events for container
+      operationId: listContainerTransportPlanEvents
+      tags: [TransportPlans]
+      responses:
+        "200": { description: Events. }
+  /subscriptions:
+    get:
+      summary: List subscriptions
+      operationId: listSubscriptions
+      tags: [Subscriptions]
+      responses:
+        "200": { description: Subscriptions. }
+    post:
+      summary: Create subscription
+      operationId: createSubscription
+      tags: [Subscriptions]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [event, callbackUrl]
+              properties:
+                event: { type: string }
+                callbackUrl: { type: string, format: uri }
+                filter: { type: object, additionalProperties: true }
+      responses:
+        "201": { description: Subscription created. }
+  /subscriptions/{subscriptionId}:
+    parameters:
+      - name: subscriptionId
+        in: path
+        required: true
+        schema: { type: string }
+    delete:
+      summary: Delete subscription
+      operationId: deleteSubscription
+      tags: [Subscriptions]
+      responses:
+        "204": { description: Subscription deleted. }
+  /inbox/events:
+    get:
+      summary: List inbox events
+      operationId: listInboxEvents
+      tags: [Subscriptions]
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+      responses:
+        "200": { description: Events. }
+  /tokens:
+    get:
+      summary: List API tokens
+      operationId: listTokens
+      tags: [Tokens]
+      responses:
+        "200": { description: Tokens. }
+    post:
+      summary: Create API token
+      operationId: createToken
+      tags: [Tokens]
+      responses:
+        "201": { description: Token created. }
+  /tokens/{tokenId}:
+    parameters:
+      - name: tokenId
+        in: path
+        required: true
+        schema: { type: string }
+    delete:
+      summary: Delete API token
+      operationId: deleteToken
+      tags: [Tokens]
+      responses:
+        "204": { description: Token deleted. }
+components:
+  parameters:
+    bookingId:
+      name: bookingId
+      in: path
+      required: true
+      schema: { type: string }
+    shipmentId:
+      name: shipmentId
+      in: path
+      required: true
+      schema: { type: string }
+    limit:
+      name: limit
+      in: query
+      schema: { type: integer, minimum: 1, maximum: 100 }
+    offset:
+      name: offset
+      in: query
+      schema: { type: integer, minimum: 0 }
+  securitySchemes:
+    bearerToken:
+      type: http
+      scheme: bearer
+      description: Bearer token issued via the /tokens endpoint.

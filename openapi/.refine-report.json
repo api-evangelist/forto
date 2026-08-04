@@ -1,0 +1,24 @@
+{
+  "provider": "forto",
+  "sources": [
+    "forto-bookings-api-openapi.yml",
+    "forto-documents-api-openapi.yml",
+    "forto-shipments-api-openapi.yml",
+    "forto-subscriptions-api-openapi.yml",
+    "forto-tokens-api-openapi.yml",
+    "forto-transportplans-api-openapi.yml"
+  ],
+  "outputs": [
+    "forto-bookings-api-openapi.yml",
+    "forto-documents-api-openapi.yml",
+    "forto-shipments-api-openapi.yml",
+    "forto-subscriptions-api-openapi.yml",
+    "forto-tokens-api-openapi.yml",
+    "forto-transportplans-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
