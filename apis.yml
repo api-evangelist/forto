@@ -30,7 +30,7 @@ description: Forto is a digital freight forwarder and supply chain platform that
   HTTPS APIs, EDI, or fully customized integrations.
 created: '2026-05-23'
 modified: '2026-05-23'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: forto:forto-public-api
   name: Forto Public API
