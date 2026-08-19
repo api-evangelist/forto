@@ -1,0 +1,93 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forto Public Bookings Documents API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List shipment documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/shipments/:shipmentId/documents",
+            "params": [
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List shipment documents"
+        },
+        {
+          "info": {
+            "name": "Upload shipment document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.forto.com/shipments/:shipmentId/documents",
+            "params": [
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "type",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload shipment document"
+        },
+        {
+          "info": {
+            "name": "List shipment invoices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/shipments/:shipmentId/invoices",
+            "params": [
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List shipment invoices"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

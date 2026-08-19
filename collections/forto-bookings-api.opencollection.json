@@ -1,0 +1,130 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forto Public Bookings API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Bookings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List booking requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/bookings",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List booking requests"
+        },
+        {
+          "info": {
+            "name": "Create booking request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.forto.com/bookings"
+          },
+          "docs": "Create booking request"
+        },
+        {
+          "info": {
+            "name": "Retrieve booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/bookings/:bookingId",
+            "params": [
+              {
+                "name": "bookingId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve booking"
+        },
+        {
+          "info": {
+            "name": "Update booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.forto.com/bookings/:bookingId",
+            "params": [
+              {
+                "name": "bookingId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update booking"
+        },
+        {
+          "info": {
+            "name": "Finalize booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.forto.com/bookings/:bookingId/finalize",
+            "params": [
+              {
+                "name": "bookingId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Finalize booking"
+        },
+        {
+          "info": {
+            "name": "Discard booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.forto.com/bookings/:bookingId/discard",
+            "params": [
+              {
+                "name": "bookingId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Discard booking"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

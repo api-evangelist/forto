@@ -1,0 +1,96 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forto Public Bookings TransportPlans API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "TransportPlans",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve transport plan for shipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/shipments/:shipmentId/transport-plan",
+            "params": [
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve transport plan for shipment"
+        },
+        {
+          "info": {
+            "name": "List transport plan events for shipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/shipments/:shipmentId/transport-plan/events",
+            "params": [
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List transport plan events for shipment"
+        },
+        {
+          "info": {
+            "name": "Retrieve transport plan for container",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/containers/:containerId/transport-plan",
+            "params": [
+              {
+                "name": "containerId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve transport plan for container"
+        },
+        {
+          "info": {
+            "name": "List transport plan events for container",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.forto.com/containers/:containerId/transport-plan/events",
+            "params": [
+              {
+                "name": "containerId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List transport plan events for container"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
