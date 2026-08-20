@@ -40,6 +40,13 @@ apis:
   - Tracking
   - Transport Plans
   - Documents
+  - Webhook
+  tags_raw:
+  - Bookings
+  - Shipments
+  - Tracking
+  - Transport Plans
+  - Documents
   - Webhooks
   humanURL: https://developers.forto.com/reference
   baseURL: https://api.forto.com
@@ -99,6 +106,8 @@ apis:
   humanURL: https://developers.forto.com/reference
   baseURL: https://api.forto.com
   tags:
+  - Subscription
+  tags_raw:
   - Subscriptions
   properties:
   - type: OpenAPI
@@ -119,6 +128,8 @@ apis:
   humanURL: https://developers.forto.com/reference
   baseURL: https://api.forto.com
   tags:
+  - Transport Plans
+  tags_raw:
   - TransportPlans
   properties:
   - type: OpenAPI
