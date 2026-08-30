@@ -140,7 +140,7 @@ apis:
   humanURL: https://developers.forto.com/reference
   baseURL: https://api.forto.com
   tags:
-  - Transport Plans
+  - TransportPlans
   tags_raw:
   - TransportPlans
   properties:
