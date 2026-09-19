@@ -48,7 +48,7 @@ apis:
 - aid: forto:forto-public-api
   name: Forto Public API
   tags:
-  - Bookings
+  - Booking
   - Shipments
   - Tracking
   - Transport Plans
@@ -89,6 +89,8 @@ apis:
   humanURL: https://developers.forto.com/reference
   baseURL: https://api.forto.com
   tags:
+  - Booking
+  tags_raw:
   - Bookings
   properties:
   - type: OpenAPI
