@@ -1,12 +1,7 @@
 {
   "provider": "forto",
   "sources": [
-    "forto-bookings-api-openapi.yml",
-    "forto-documents-api-openapi.yml",
-    "forto-shipments-api-openapi.yml",
-    "forto-subscriptions-api-openapi.yml",
-    "forto-tokens-api-openapi.yml",
-    "forto-transportplans-api-openapi.yml"
+    "_original/forto-openapi.yml"
   ],
   "outputs": [
     "forto-bookings-api-openapi.yml",
@@ -19,6 +14,23 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "forto-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "forto-openapi.yml: declared missing tag: Bookings",
+    "forto-openapi.yml: declared missing tag: Documents",
+    "forto-openapi.yml: declared missing tag: Shipments",
+    "forto-openapi.yml: declared missing tag: Subscriptions",
+    "forto-openapi.yml: declared missing tag: Tokens",
+    "forto-openapi.yml: declared missing tag: TransportPlans",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "forto-bookings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "forto-documents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "forto-shipments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "forto-subscriptions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "forto-tokens-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "forto-transportplans-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
