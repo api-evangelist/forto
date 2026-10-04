@@ -88,12 +88,12 @@ paths:
           description: Booking discarded.
 components:
   parameters:
-    bookingId:
-      name: bookingId
-      in: path
-      required: true
+    offset:
+      name: offset
+      in: query
       schema:
-        type: string
+        type: integer
+        minimum: 0
     limit:
       name: limit
       in: query
@@ -101,12 +101,12 @@ components:
         type: integer
         minimum: 1
         maximum: 100
-    offset:
-      name: offset
-      in: query
+    bookingId:
+      name: bookingId
+      in: path
+      required: true
       schema:
-        type: integer
-        minimum: 0
+        type: string
   securitySchemes:
     bearerToken:
       type: http
