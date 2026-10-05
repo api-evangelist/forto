@@ -1,0 +1,37 @@
+slug: forto
+provider: Forto
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: TransportPlans
+  spec_file: forto-transportplans-api-openapi.yml
+  capability_id: BC-520.50
+  capability_id_l1: BC-520
+  capability_name: Logistics Operations Management
+  confidence: 0.75
+  evidence: GET /shipments/{shipmentId}/transport-plan "Retrieve transport plan for shipment"; GET /containers/{containerId}/transport-plan/events
+    "List transport plan events for container"
+  reason: Transport plans and milestone events per shipment/container describe routing and transport execution
+    visibility for freight, i.e. Logistics Operations Management. Not project planning despite the word
+    'plan'.
+- tag: Shipments
+  spec_file: forto-shipments-api-openapi.yml
+  capability_id: BC-520.50
+  capability_id_l1: BC-520
+  capability_name: Logistics Operations Management
+  confidence: 0.72
+  evidence: GET /shipments listShipments "List shipments"; GET /shipments/{shipmentId} "Retrieve shipment"
+    — vendor is a "digital freight forwarder" exposing "shipment operations"
+  reason: The operations expose freight shipment records for a forwarder, i.e. transport execution and
+    shipment visibility, which falls under Logistics Operations Management within Supply Chain Management.
+    No narrower candidate for freight tracking exists, and nothing here suggests sales orders or inventory.
