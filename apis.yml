@@ -153,6 +153,12 @@ apis:
   - type: OpenAPI
     url: openapi/forto-transportplans-api-openapi.yml
 common:
+- type: Plans
+  url: plans/forto-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/forto-rate-limits.yml
+- type: FinOps
+  url: finops/forto-finops.yml
 - type: CapabilityMap
   url: capabilities/forto-capability-edges.yml
   name: Forto Business Capability Map
