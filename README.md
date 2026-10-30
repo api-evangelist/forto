@@ -1,4 +1,4 @@
-# Forto (forto)
+# Forto
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,73 +66,131 @@
 
 Forto is a digital freight forwarder and supply chain platform that combines technology with logistics expertise to provide sea, air, and rail freight services across 100+ countries. The platform offers a public REST API for booking management, shipment tracking, transport plans, document handling, and webhook subscriptions, enabling shippers, enterprises, and partners to integrate Forto freight operations directly into their ERP, TMS, and supply chain systems via standard HTTPS APIs, EDI, or fully customized integrations.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/forto/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/forto/refs/heads/main/apis.yml)
+**Areas:** Freight · Logistics · Supply Chain · Shipping · Freight Forwarding · EDI
 
-## Scope
+## Forto on APIs.io
 
-- **Type:** Index
+Everything profiled for Forto is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/forto/](https://apis.io/providers/forto/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (7)
 
-- Freight
-- Logistics
-- Supply Chain
-- Shipping
-- Freight Forwarding
-- EDI
+- [Forto Public API](https://apis.io/apis/forto/forto-public-api/) — The Forto Public API provides programmatic access to Forto's digital freight forwarding platform. It exposes booking management (create, update, finalize,…
+- [Forto Bookings API](https://apis.io/apis/forto/forto-bookings-api/) — The Bookings API from Forto — 4 operation(s) for bookings.
+- [Forto Documents API](https://apis.io/apis/forto/forto-documents-api/) — The Documents API from Forto — 2 operation(s) for documents.
+- [Forto Shipments API](https://apis.io/apis/forto/forto-shipments-api/) — The Shipments API from Forto — 2 operation(s) for shipments.
+- [Forto Subscriptions API](https://apis.io/apis/forto/forto-subscriptions-api/) — The Subscriptions API from Forto — 3 operation(s) for subscriptions.
+- [Forto Tokens API](https://apis.io/apis/forto/forto-tokens-api/) — The Tokens API from Forto — 2 operation(s) for tokens.
+- [Forto TransportPlans API](https://apis.io/apis/forto/forto-transportplans-api/) — The TransportPlans API from Forto — 4 operation(s) for transportplans.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-23
-- **Modified:** 2026-05-23
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Forto Public API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Forto Public API provides programmatic access to Forto's digital freight forwarding platform. It exposes booking management (create, update, finalize, discard, list), shipment operations (list, get, documents, invoices, reports), multi-version transport plans with milestone events, subscription-based webhooks for change notifications, and OAuth-style token management. Integrations can be implemented out-of-the-box via the REST API, through predefined EDI flows, or as fully customized integrations into SAP, Infor Nexus, Oracle, and other enterprise systems.
+- [Forto Agentic Access](https://apis.io/agentic-access/forto/forto-agentic-access/)
 
-- **Human URL:** [https://developers.forto.com/reference](https://developers.forto.com/reference)
-- **Base URL:** `https://api.forto.com`
+#### Collections (7)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Bookings
-- Shipments
-- Tracking
-- Transport Plans
-- Documents
-- Webhooks
+- [Forto Public API](https://apis.io/collections/forto/open-forto/)
+- [Forto Public Bookings API](https://apis.io/collections/forto/open-forto-bookings-api/)
+- [Forto Public Bookings Documents API](https://apis.io/collections/forto/open-forto-documents-api/)
+- [Forto Public Bookings Shipments API](https://apis.io/collections/forto/open-forto-shipments-api/)
+- [Forto Public Bookings Subscriptions API](https://apis.io/collections/forto/open-forto-subscriptions-api/)
+- [Forto Public Bookings Tokens API](https://apis.io/collections/forto/open-forto-tokens-api/)
+- [Forto Public Bookings TransportPlans API](https://apis.io/collections/forto/open-forto-transportplans-api/)
 
-#### Properties
+#### Security (3)
 
-- [Documentation](https://developers.forto.com/)
-- [API Reference](https://developers.forto.com/reference)
-- [L L Ms Txt](https://developers.forto.com/llms.txt)
-- [Getting Started](https://developers.forto.com/recipes/creation-of-booking-request)
-- [Tutorial](https://developers.forto.com/recipes/code-sample-listening-for-changes-with-webhook-subscription)
-- [Postman Collection](collections/forto.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/forto.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Forto Authentication](https://apis.io/security/forto/forto-authentication/)
+- [Forto Domain Security](https://apis.io/security/forto/forto-domain-security/)
+- [Forto Vulnerability Disclosure](https://apis.io/security/forto/forto-vulnerability-disclosure/)
 
-- [LinkedIn](https://www.linkedin.com/company/forto-logistics)
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Forto Plans Pricing](https://apis.io/plans/forto/forto-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Forto Rate Limits](https://apis.io/rate-limits/forto/forto-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Forto Finops](https://apis.io/finops/forto/forto-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://forto.com/en/)
-- [Portal](https://developers.forto.com/)
 - [Documentation](https://developers.forto.com/reference)
-- [Getting Started](https://developers.forto.com/recipes/creation-of-booking-request)
-- [Tutorials](https://developers.forto.com/recipes)
-- [L L Ms Txt](https://developers.forto.com/llms.txt)
-- [Blog](https://forto.com/en/blog/)
+- [Getting started](https://developers.forto.com/recipes/creation-of-booking-request)
 - [Support](https://forto.com/en/contact-us/)
-- [Careers](https://forto.com/en/career/)
-- [Privacy Policy](https://forto.com/en/data-protection/)
-- [Terms of Service](https://forto.com/en/terms-and-conditions/)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
+- [Blog](https://forto.com/en/blog/)
+- [Terms of service](https://forto.com/en/terms-and-conditions/)
+- [Privacy policy](https://forto.com/en/data-protection/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 18.0** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 46.4 |
+| Access clarity | 5.3 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 17.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/forto/](https://apis.io/providers/forto/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Forto: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/forto/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
